@@ -1,7 +1,9 @@
 #include<iostream>
 using namespace std;
 
-//#define ARRAY
+#define ARRAY
+#define MIN_MAX
+#define MIN_MAX_1
 
 void main()
 {
@@ -53,6 +55,33 @@ void main()
 	cout << "Максимальное значение: " << max << endl;
 #endif // ARRAY
 
-		
+#ifdef MIN_MAX
+	int min; max;
+	min = max = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min)min = arr[i];
+		if (arr[i] > max)max = arr[i];
+		//i- номер элемента массива
+		//arr[i]- значение элемента массива с номером 'i'
+	}
+	cout << "Минимальное значение: " << min << endl;
+	cout << "Максимальное значение: " << max << endl;
+
+#endif // MIN_MAX
+
+#ifdef MIN_MAX_1
+	int index_of_min, index_of_max;
+	index_of_min = index_of_max = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < arr[index_of_min])index_of_min = i;
+		if (arr[i] > arr[index_of_max])index_of_max = i;
+	}
+	cout << "Минимальное значение: " << arr[index_of_min] << endl;
+	cout << "Максимальное значение: " << arr[index_of_max] << endl;
+#endif // MIN_MAX_1
+	
+	
 
 }
